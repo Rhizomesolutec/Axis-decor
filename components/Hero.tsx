@@ -44,7 +44,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative -mt-[var(--header-h)] h-[100svh] min-h-[100svh] overflow-hidden bg-sand"
+      className="relative -mt-[var(--header-h)] h-[100dvh] min-h-[100dvh] overflow-hidden bg-sand"
       aria-roledescription="carousel"
       aria-label="Architectural decoration"
     >
@@ -77,9 +77,9 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-black/[0.14]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(17,17,17,0.34)_0%,rgba(17,17,17,0.06)_24%,rgba(17,17,17,0.04)_52%,rgba(17,17,17,0.46)_100%)]" />
 
-      <div className="page-wrap relative z-10 flex h-full flex-col justify-end pb-32 md:pb-36">
+      <div className="page-wrap relative z-10 flex h-full flex-col justify-end pb-24 sm:pb-28 md:pb-36">
         <motion.h1
-          className="max-w-[17rem] font-display text-[clamp(1.9rem,3.4vw,2.9rem)] font-medium leading-[1.15] tracking-[-0.015em] text-white sm:max-w-[22rem] md:max-w-[26rem]"
+          className="max-w-[14rem] font-display text-[clamp(1.65rem,6.2vw,2.9rem)] font-medium leading-[1.12] tracking-[-0.015em] text-white sm:max-w-[22rem] md:max-w-[26rem]"
           initial={reduce ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: reduce ? 0 : 0.35, ease }}
@@ -97,14 +97,14 @@ export function Hero() {
         </motion.p>
 
         <motion.div
-          className="mt-6 flex flex-wrap items-center gap-3"
+          className="mt-5 flex flex-wrap items-center gap-2 sm:mt-6 sm:gap-3"
           initial={reduce ? false : { opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: reduce ? 0 : 1.28, ease }}
         >
           <Link
             href="/projects"
-            className="group inline-flex min-h-12 items-center gap-3 bg-white px-6 text-sm font-medium text-ink transition-[background-color,transform] duration-300 hover:-translate-y-0.5 hover:bg-[#f4f1ea]"
+            className="group inline-flex min-h-11 items-center gap-2 bg-white px-4 text-[0.8rem] font-medium text-ink transition-[background-color,transform] duration-300 hover:-translate-y-0.5 hover:bg-[#f4f1ea] sm:min-h-12 sm:gap-3 sm:px-6 sm:text-sm"
           >
             Explore Our Projects
             <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
@@ -113,7 +113,7 @@ export function Hero() {
           </Link>
           <Link
             href="/services"
-            className="inline-flex min-h-12 items-center border border-white/70 px-6 text-sm font-medium text-white transition-colors duration-300 hover:border-white hover:bg-white hover:text-ink"
+            className="inline-flex min-h-11 items-center border border-white/70 px-4 text-[0.8rem] font-medium text-white transition-colors duration-300 hover:border-white hover:bg-white hover:text-ink sm:min-h-12 sm:px-6 sm:text-sm"
           >
             Our Services
           </Link>
