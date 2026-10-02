@@ -61,6 +61,31 @@ body {
   line-height: 1.08;
 }
 
+.hero-screen {
+  height: 100vh;
+  height: 100lvh;
+  min-height: 100vh;
+  min-height: 100lvh;
+}
+
+.hero-screen-copy {
+  padding-bottom: 7.5rem;
+}
+
+.hero-screen-foot {
+  bottom: 1.5rem;
+}
+
+@supports (height: 100dvh) {
+  .hero-screen-copy {
+    padding-bottom: calc(100lvh - 100dvh + 7.5rem);
+  }
+
+  .hero-screen-foot {
+    bottom: calc(100lvh - 100dvh + 1.5rem);
+  }
+}
+
 .skip-link {
   position: absolute;
   left: 1rem;

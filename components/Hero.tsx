@@ -44,7 +44,8 @@ export function Hero() {
 
   return (
     <section
-      className="relative -mt-[var(--header-h)] h-[100dvh] min-h-[100dvh] overflow-hidden bg-sand"
+      id="hero"
+      className="hero-screen relative -mt-[var(--header-h)] overflow-hidden bg-sand"
       aria-roledescription="carousel"
       aria-label="Architectural decoration"
     >
@@ -77,7 +78,7 @@ export function Hero() {
       <div className="pointer-events-none absolute inset-0 bg-black/[0.14]" />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(17,17,17,0.34)_0%,rgba(17,17,17,0.06)_24%,rgba(17,17,17,0.04)_52%,rgba(17,17,17,0.46)_100%)]" />
 
-      <div className="page-wrap relative z-10 flex h-full flex-col justify-end pb-24 sm:pb-28 md:pb-36">
+      <div className="hero-screen-copy page-wrap relative z-10 flex h-full flex-col justify-end">
         <motion.h1
           className="max-w-[14rem] font-display text-[clamp(1.65rem,6.2vw,2.9rem)] font-medium leading-[1.12] tracking-[-0.015em] text-white sm:max-w-[22rem] md:max-w-[26rem]"
           initial={reduce ? false : { opacity: 0, y: 16 }}
@@ -120,12 +121,16 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-6 z-10 md:bottom-8">
+      <div className="hero-screen-foot pointer-events-none absolute inset-x-0 z-10">
         <div className="page-wrap flex items-end justify-between gap-6">
           <button
             type="button"
             className="pointer-events-auto inline-flex flex-col items-start gap-2 text-[0.68rem] font-medium tracking-[0.2em] text-white/80 uppercase"
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+            onClick={() => {
+              const hero = document.getElementById("hero");
+              const top = hero ? hero.offsetTop + hero.offsetHeight : window.innerHeight;
+              window.scrollTo({ top, behavior: "smooth" });
+            }}
           >
             <span>Scroll</span>
             <span aria-hidden="true" className="hero-nudge">
