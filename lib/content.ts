@@ -14,7 +14,7 @@ export const images = {
   nadAlSheba: "/images/project/nad-al-sheba.jpg",
   gypsumCeiling: "/images/project/gypsum-ceiling.jpg",
   columns: "/images/GRC & GRG columns.jpeg",
-  logo: "/images/logo/axis-decor-logo.png",
+  logo: "/images/logo/axis-decor-mark.png",
   logoLight: "/images/logo/axis-decor-mark-light.png",
 } as const;
 

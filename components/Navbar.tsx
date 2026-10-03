@@ -73,7 +73,7 @@ export function Navbar() {
         className={`fixed inset-x-0 top-0 z-40 border-b transition-[background-color,border-color,box-shadow] duration-500 ${
           onHero
             ? "border-transparent bg-transparent"
-            : "border-line bg-white/92 shadow-[0_1px_0_rgba(23,23,23,0.03)] backdrop-blur-md"
+            : "border-line bg-white/92 shadow-[0_1px_0_rgba(92,31,120,0.08)] backdrop-blur-md"
         }`}
       >
         <div

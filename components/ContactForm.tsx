@@ -172,7 +172,7 @@ export function ContactForm() {
       <div>
         <button
           type="submit"
-          className="inline-flex min-h-12 items-center justify-center bg-ink px-6 text-sm font-medium text-ivory transition-colors duration-300 hover:bg-[#2a2a2a]"
+          className="inline-flex min-h-12 items-center justify-center bg-ink px-6 text-sm font-medium text-ivory transition-colors duration-300 hover:bg-[#45185c]"
         >
           Send Enquiry
         </button>

@@ -105,7 +105,7 @@ export function Hero() {
         >
           <Link
             href="/projects"
-            className="group inline-flex min-h-11 items-center gap-2 bg-white px-4 text-[0.8rem] font-medium text-ink transition-[background-color,transform] duration-300 hover:-translate-y-0.5 hover:bg-[#f4f1ea] sm:min-h-12 sm:gap-3 sm:px-6 sm:text-sm"
+            className="group inline-flex min-h-11 items-center gap-2 bg-white px-4 text-[0.8rem] font-medium text-ink transition-[background-color,transform] duration-300 hover:-translate-y-0.5 hover:bg-[#f3eaf6] sm:min-h-12 sm:gap-3 sm:px-6 sm:text-sm"
           >
             Explore Our Projects
             <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">

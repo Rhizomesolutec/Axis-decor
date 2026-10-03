@@ -33,12 +33,18 @@ export function ProjectCard({
           className="transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         />
       </ImageReveal>
-      <div className="mt-4">
+      <div className="mt-5">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-          <h3 className="font-serif text-[1.65rem] leading-none text-ink">{project.title}</h3>
-          {project.location ? <p className="text-sm text-stone">{project.location}</p> : null}
+          <h3 className="font-display text-[1.45rem] font-medium leading-tight tracking-[-0.02em] text-ink sm:text-[1.7rem]">
+            {project.title}
+          </h3>
+          {project.location ? (
+            <p className="text-[0.72rem] font-medium tracking-[0.12em] text-stone uppercase">
+              {project.location}
+            </p>
+          ) : null}
         </div>
-        <p className="mt-2 text-sm leading-relaxed text-stone">{project.scope}</p>
+        <p className="mt-2 max-w-md text-sm leading-relaxed text-stone">{project.scope}</p>
         {project.client ? (
           <p className="mt-1 text-sm text-stone">Client: {project.client}</p>
         ) : null}

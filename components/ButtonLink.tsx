@@ -12,7 +12,7 @@ export function ButtonLink({
 }) {
   const classes =
     variant === "solid"
-      ? "inline-flex min-h-12 items-center justify-center gap-3 bg-ink px-6 text-sm font-medium text-ivory transition-colors duration-300 hover:bg-[#2a2a2a]"
+      ? "inline-flex min-h-12 items-center justify-center gap-3 bg-ink px-6 text-sm font-medium text-ivory transition-colors duration-300 hover:bg-[#45185c]"
       : "inline-flex min-h-12 items-center justify-center gap-3 border border-ink/20 px-6 text-sm font-medium text-ink transition-colors duration-300 hover:border-ink";
 
   return (

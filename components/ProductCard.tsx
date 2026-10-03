@@ -5,7 +5,7 @@ type ProductPhoto = (typeof productPhotos)[number];
 
 export function ProductCard({ item }: { item: ProductPhoto }) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-[0_10px_24px_rgba(23,23,23,0.06)] transition-[transform,box-shadow] duration-500 ease-out sm:rounded-2xl md:hover:-translate-y-1 md:hover:shadow-[0_18px_36px_rgba(23,23,23,0.12)]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-[0_10px_24px_rgba(92,31,120,0.08)] transition-[transform,box-shadow] duration-500 ease-out sm:rounded-2xl md:hover:-translate-y-1 md:hover:shadow-[0_18px_36px_rgba(92,31,120,0.16)]">
       <div className="relative aspect-square overflow-hidden bg-ivory">
         <Media
           src={item.src}
