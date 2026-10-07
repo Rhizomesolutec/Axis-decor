@@ -9,7 +9,9 @@ export const site = {
   email: "info@axisdecor.co",
   phone: "+968 7137 6640",
   phoneHref: "tel:+96871376640",
+  whatsappHref: "https://wa.me/96871376640",
   emailHref: "mailto:info@axisdecor.co",
+  address: "PC: 111, Ruwi, Muscat, Oman",
 } as const;
 
 export const navItems = [

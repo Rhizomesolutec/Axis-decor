@@ -6,7 +6,7 @@ import { commissions, projects } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Selected work including Reem Central Park in Abu Dhabi, Al Habtoor City and Zabeel Palace in Dubai, and mosque projects.",
+    "Selected work including Reem Central Park in Abu Dhabi, Al Habtoor City and Zabeel Palace in Dubai, GRG decoration, and GRP waterproofing.",
 };
 
 export default function ProjectsPage() {

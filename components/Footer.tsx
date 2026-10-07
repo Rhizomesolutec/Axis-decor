@@ -34,14 +34,20 @@ export function Footer() {
           </p>
           <ul className="mt-3 space-y-2 text-xs sm:mt-5 sm:space-y-3 sm:text-sm">
             <li>
-              <a className="text-ink hover:text-stone" href={site.emailHref}>
-                {site.email}
+              <a className="flex items-start gap-2 text-ink hover:text-stone" href={site.emailHref}>
+                <MailIcon />
+                <span className="min-w-0 break-all sm:break-normal">{site.email}</span>
               </a>
             </li>
             <li>
-              <a className="break-all text-ink hover:text-stone sm:break-normal" href={site.phoneHref}>
-                {site.phone}
+              <a className="flex items-start gap-2 text-ink hover:text-stone" href={site.phoneHref}>
+                <PhoneIcon />
+                <span className="min-w-0 break-all sm:break-normal">{site.phone}</span>
               </a>
+            </li>
+            <li className="flex items-start gap-2 text-ink">
+              <PinIcon />
+              <span className="min-w-0">{site.address}</span>
             </li>
           </ul>
         </div>
@@ -54,5 +60,43 @@ export function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="mt-0.5 size-3.5 shrink-0 sm:size-4">
+      <rect x="3" y="5" width="18" height="14" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M4 7l8 6 8-6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="mt-0.5 size-3.5 shrink-0 sm:size-4">
+      <path
+        d="M8.5 4.5h2l1.2 3-1.6 1a12 12 0 0 0 5.4 5.4l1-1.6 3 1.2v2A1.5 1.5 0 0 1 18 17 14 14 0 0 1 7 6a1.5 1.5 0 0 1 1.5-1.5z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function PinIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="mt-0.5 size-3.5 shrink-0 sm:size-4">
+      <path
+        d="M12 21s6-5.4 6-10a6 6 0 1 0-12 0c0 4.6 6 10 6 10z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="11" r="2" fill="none" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
   );
 }

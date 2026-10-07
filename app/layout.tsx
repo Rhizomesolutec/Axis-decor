@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: site.description,
     images: [
       {
-        url: "/images/hero 3.jpeg",
+        url: "/images/hero 3.webp",
         width: 1170,
         height: 825,
         alt: "Geometric GRC facade panels at Reem Central Park, Al Reem Island, Abu Dhabi",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: site.title,
     description: site.description,
-    images: ["/images/hero 3.jpeg"],
+    images: ["/images/hero 3.webp"],
   },
 };
 
@@ -63,6 +63,13 @@ const jsonLd = {
   email: site.email,
   telephone: site.phone,
   url: site.url,
+  address: {
+    "@type": "PostalAddress",
+    postalCode: "111",
+    addressLocality: "Ruwi",
+    addressRegion: "Muscat",
+    addressCountry: "OM",
+  },
   description: site.description,
 };
 
@@ -70,6 +77,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${manrope.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-ivory font-sans text-ink">

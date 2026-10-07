@@ -40,9 +40,9 @@ function validate(values: Fields): Errors {
   return next;
 }
 
-function mailtoFor(values: Fields) {
+function whatsappFor(values: Fields) {
   const lines = [
-    `Name: ${values.name.trim()}`,
+    `Project enquiry from ${values.name.trim()}`,
     `Company: ${values.company.trim() || "—"}`,
     `Email: ${values.email.trim()}`,
     `Phone: ${values.phone.trim() || "—"}`,
@@ -50,8 +50,7 @@ function mailtoFor(values: Fields) {
     "",
     values.message.trim(),
   ];
-  const subject = `Project enquiry from ${values.name.trim()}`;
-  return `mailto:${site.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+  return `${site.whatsappHref}?text=${encodeURIComponent(lines.join("\n"))}`;
 }
 
 const fieldClass =
@@ -79,6 +78,7 @@ export function ContactForm() {
       return;
     }
     setReady(true);
+    window.open(whatsappFor(fields), "_blank", "noopener,noreferrer");
   }
 
   return (
@@ -177,21 +177,23 @@ export function ContactForm() {
           Send Enquiry
         </button>
         <p className="mt-4 max-w-md text-sm leading-relaxed text-stone">
-          This page does not submit the form to a server. A valid enquiry can be sent by email.
+          A valid enquiry opens WhatsApp to {site.phone}. Send the message there so it reaches that number.
         </p>
       </div>
 
       {ready ? (
         <div role="status" className="border-t border-line pt-6">
-          <p className="font-serif text-2xl text-ink">Ready to send.</p>
+          <p className="font-serif text-2xl text-ink">Ready in WhatsApp.</p>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-stone">
-            Open your email with these details addressed to {site.email}, or call {site.phone}.
+            Your enquiry is addressed to {site.phone}. If WhatsApp did not open, use the button below, then press send.
           </p>
           <a
-            href={mailtoFor(fields)}
+            href={whatsappFor(fields)}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-5 inline-flex min-h-12 items-center border border-ink/20 px-6 text-sm text-ink"
           >
-            Email this enquiry
+            Open WhatsApp
           </a>
         </div>
       ) : null}

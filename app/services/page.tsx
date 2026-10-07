@@ -26,7 +26,7 @@ const chapters = [
     index: "02",
     title: "GRP",
     summary: "Lightweight architectural elements",
-    body: "Glass reinforced plastic for domes, A/C grills, and other lightweight elements. The GRP A/C grill at Al Habtoor City, Dubai, was carried out for Al Habtoor Group.",
+    body: "Glass reinforced plastic for domes, A/C grills, waterproofing, and other lightweight elements. GRP waterproofing covers swimming pools, RCC underground water storage tanks, and open terraces. The GRP A/C grill at Al Habtoor City, Dubai, was carried out for Al Habtoor Group.",
     image: images.domePlateAlt,
     alt: "Brochure plate of GRP and GRC decorative domes, one with a gold finish",
     objectPosition: "center",

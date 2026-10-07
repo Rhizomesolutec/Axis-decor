@@ -9,22 +9,22 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 const slides = [
   {
-    src: "/images/hero/cladding.jpg",
+    src: "/images/hero/cladding.webp",
     alt: "White GRC facade with textured decorative wall cladding and palms",
     label: "GRC cladding",
   },
   {
-    src: "/images/hero/dome.jpg",
+    src: "/images/hero/dome.webp",
     alt: "Cream GRP and GRC decorative dome against a clear sky",
     label: "Decorative domes",
   },
   {
-    src: "/images/hero/columns.jpg",
+    src: "/images/hero/columns.webp",
     alt: "Bright interior with fluted white columns, cornices, and a curved stair",
     label: "Columns",
   },
   {
-    src: "/images/hero/arches.jpg",
+    src: "/images/hero/arches.webp",
     alt: "Ornamental arches and geometric decorative panels in a bright interior",
     label: "Arches",
   },

@@ -44,6 +44,12 @@ export default function ContactPage() {
               </a>
             </dd>
           </div>
+          <div>
+            <dt className="text-[0.72rem] font-medium tracking-[0.16em] text-stone uppercase">
+              Location
+            </dt>
+            <dd className="mt-2 text-lg text-ink">{site.address}</dd>
+          </div>
         </dl>
       </div>
 

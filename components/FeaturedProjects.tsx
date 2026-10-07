@@ -33,6 +33,7 @@ export function FeaturedProjects() {
             <ProjectCard
               project={getProject(item.id)}
               linked
+              hrefId={item.id === "grc-interior-dome" ? "falcon-dome" : item.id}
               aspect={item.aspect}
               sizes="(min-width: 1024px) 40vw, 100vw"
             />
