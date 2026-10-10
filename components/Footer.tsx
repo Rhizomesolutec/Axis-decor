@@ -39,16 +39,25 @@ export function Footer() {
                 <span className="min-w-0 break-all sm:break-normal">{site.email}</span>
               </a>
             </li>
-            <li>
-              <a className="flex items-start gap-2 text-ink hover:text-stone" href={site.phoneHref}>
-                <PhoneIcon />
-                <span className="min-w-0 break-all sm:break-normal">{site.phone}</span>
-              </a>
-            </li>
+            {site.mobiles.map((item) => (
+              <li key={item.href}>
+                <a className="flex items-start gap-2 text-ink hover:text-stone" href={item.href}>
+                  <PhoneIcon />
+                  <span className="min-w-0 break-all sm:break-normal">
+                    {item.label} {item.number}
+                  </span>
+                </a>
+              </li>
+            ))}
             <li className="flex items-start gap-2 text-ink">
               <PinIcon />
-              <span className="min-w-0">{site.address}</span>
+              <span className="min-w-0">
+                Head office, {site.headOffice}
+                <span className="mt-1 block">CR: {site.cr}</span>
+                <span className="mt-1 block">{site.address}</span>
+              </span>
             </li>
+            <li className="text-ink">{site.regions}</li>
           </ul>
         </div>
       </div>

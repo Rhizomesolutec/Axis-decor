@@ -19,34 +19,38 @@ const sourceSerif = Source_Serif_4({
   weight: ["400", "500"],
 });
 
+const socialTitle = "Axis Decor & International L.L.C. | Architectural Décor Solutions";
+const socialDescription =
+  "Axis Decor & International L.L.C. produces GRC and GRP architectural decoration, including domes, cladding, and custom architectural elements.";
+const socialImage = {
+  url: "/images/axis-decor-preview.jpg",
+  width: 1200,
+  height: 630,
+  alt: "Mosque exterior with patterned domes, a minaret, and lattice screens",
+} as const;
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: site.title,
+    default: socialTitle,
     template: `%s | ${site.name}`,
   },
-  description: site.description,
+  description: socialDescription,
   applicationName: site.shortName,
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: site.name,
-    title: site.title,
-    description: site.description,
-    images: [
-      {
-        url: "/images/hero 3.webp",
-        width: 1170,
-        height: 825,
-        alt: "Geometric GRC facade panels at Reem Central Park, Al Reem Island, Abu Dhabi",
-      },
-    ],
+    siteName: "Axis Decor & International L.L.C.",
+    url: "https://www.axisdecor.co/",
+    title: socialTitle,
+    description: socialDescription,
+    images: [socialImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: site.title,
-    description: site.description,
-    images: ["/images/hero 3.webp"],
+    title: socialTitle,
+    description: socialDescription,
+    images: [socialImage.url],
   },
 };
 
@@ -61,7 +65,13 @@ const jsonLd = {
   name: site.name,
   slogan: site.slogan,
   email: site.email,
-  telephone: site.phone,
+  telephone: site.mobiles.map((item) => item.number),
+  identifier: {
+    "@type": "PropertyValue",
+    name: "CR",
+    value: site.cr,
+  },
+  areaServed: ["OM", "AE", "IN"],
   url: site.url,
   address: {
     "@type": "PostalAddress",
