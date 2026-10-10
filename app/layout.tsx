@@ -23,14 +23,15 @@ const socialTitle = "Axis Decor & International L.L.C. | Architectural Décor So
 const socialDescription =
   "Axis Decor & International L.L.C. produces GRC and GRP architectural decoration, including domes, cladding, and custom architectural elements.";
 const socialImage = {
-  url: "/images/axis-decor-preview.jpg",
-  width: 1200,
-  height: 630,
-  alt: "Mosque exterior with patterned domes, a minaret, and lattice screens",
+  url: "https://www.axisdecor.co/images/hero/cladding.webp",
+  width: 1280,
+  height: 720,
+  alt: "White GRC facade with textured decorative wall cladding and palms",
+  type: "image/webp",
 } as const;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL("https://www.axisdecor.co"),
   title: {
     default: socialTitle,
     template: `%s | ${site.name}`,
