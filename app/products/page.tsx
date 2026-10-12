@@ -6,6 +6,7 @@ import { ProductGrid } from "@/components/ProductCard";
 import {
   exteriorDecor,
   grcApplications,
+  grgApplications,
   grpApplications,
   images,
 } from "@/lib/content";
@@ -13,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "GRC and GRP applications: domes, wall panels, columns, arches, mashrabiya, cornices, exterior pots, and lightweight architectural elements.",
+    "GRC, GRP, and GRG applications: domes, cladding, decorative ceilings, mouldings, column cladding, and exterior pots.",
 };
 
 export default function ProductsPage() {
@@ -27,7 +28,7 @@ export default function ProductsPage() {
           Applications
         </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-stone sm:text-lg">
-            GRC, GRP, and exterior architectural décor.
+            GRC, GRP, GRG, and exterior architectural décor.
           </p>
       </section>
 
@@ -133,6 +134,37 @@ export default function ProductsPage() {
             </p>
             <ul className="mt-8 divide-y divide-line border-y border-line">
               {grpApplications.map((item) => (
+                <li key={item.name} className="py-5">
+                  <p className="font-serif text-2xl text-ink">{item.name}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-stone">{item.note}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="grg-heading">
+        <div className="page-wrap grid items-center gap-10 py-16 md:py-24 lg:grid-cols-12">
+          <figure className="lg:col-span-5">
+            <div className="relative aspect-[4/5] overflow-hidden bg-sand">
+              <Media
+                src={images.grgDecoration2}
+                alt="Cool-toned GRG ceiling rose with a crystal chandelier"
+                sizes="(min-width: 1024px) 38vw, 100vw"
+              />
+            </div>
+          </figure>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <h2 id="grg-heading" className="display text-[3.2rem] text-ink sm:text-6xl">
+              GRG
+            </h2>
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-stone">
+              Glass fibre reinforced gypsum for decorative ceilings, mouldings,
+              and column cladding.
+            </p>
+            <ul className="mt-8 divide-y divide-line border-y border-line">
+              {grgApplications.map((item) => (
                 <li key={item.name} className="py-5">
                   <p className="font-serif text-2xl text-ink">{item.name}</p>
                   <p className="mt-2 text-sm leading-relaxed text-stone">{item.note}</p>

@@ -28,6 +28,7 @@ export const filters = [
   "All",
   "GRC",
   "GRP",
+  "GRG",
   "Domes",
   "Cladding",
   "Mosques",
@@ -109,7 +110,7 @@ export const projects: Project[] = [
     scope: "GRG decorative ceiling",
     image: images.grgDecoration1,
     alt: "GRG ceiling rose with a crystal chandelier",
-    categories: [],
+    categories: ["GRG"],
     objectPosition: "center",
     fit: "cover",
     frame: "landscape",
@@ -143,7 +144,7 @@ export const projects: Project[] = [
     scope: "GRG column cladding and GRP A/C grill",
     image: images.habtoor,
     alt: "Bright interior with fluted white columns, cornices, and a curved stair at Al Habtoor City, Dubai",
-    categories: ["GRP", "Commercial"],
+    categories: ["GRG", "GRP", "Commercial"],
     objectPosition: "center center",
     fit: "cover",
     frame: "landscape",
@@ -256,7 +257,7 @@ export const projects: Project[] = [
     scope: "GRG decorative moulding",
     image: images.project8,
     alt: "GRG decorative moulding with a diamond wall panel",
-    categories: [],
+    categories: ["GRG"],
     objectPosition: "center",
     fit: "cover",
     frame: "landscape",
@@ -397,8 +398,20 @@ export const expertise = [
     fit: "contain" as const,
   },
   {
-    id: "domes",
+    id: "grg",
     index: "03",
+    title: "GRG",
+    summary: "Glass fibre reinforced gypsum",
+    detail:
+      "Glass fibre reinforced gypsum for decorative ceilings, mouldings, and column cladding.",
+    image: images.grgDecoration2,
+    alt: "Cool-toned GRG ceiling rose with a crystal chandelier",
+    objectPosition: "center",
+    fit: "cover" as const,
+  },
+  {
+    id: "domes",
+    index: "04",
     title: "Domes",
     summary: "Architectural dome systems",
     detail:
@@ -410,7 +423,7 @@ export const expertise = [
   },
   {
     id: "cladding",
-    index: "04",
+    index: "05",
     title: "Cladding",
     summary: "Decorative architectural surfaces",
     detail:
@@ -422,7 +435,7 @@ export const expertise = [
   },
   {
     id: "custom",
-    index: "05",
+    index: "06",
     title: "Custom elements",
     summary: "Bespoke architectural solutions",
     detail:
@@ -496,6 +509,15 @@ export const grpApplications = [
   },
 ] as const;
 
+export const grgApplications = [
+  { name: "Decorative ceilings", note: "GRG decorative ceilings." },
+  { name: "Decorative moulding", note: "GRG decorative moulding." },
+  {
+    name: "Column cladding",
+    note: "GRG column cladding at Al Habtoor City, Dubai, for Al Habtoor Group.",
+  },
+] as const;
+
 export const productPhotos = [
   {
     src: "/images/products/product 1.webp",
@@ -545,6 +567,7 @@ export const exteriorDecor = [
 export const projectTypes = [
   "GRC",
   "GRP",
+  "GRG",
   "Domes",
   "Cladding",
   "Columns",
