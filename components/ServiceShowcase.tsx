@@ -1,11 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { FadeGallery } from "@/components/FadeGallery";
 import { Media } from "@/components/Media";
 import { expertise } from "@/lib/content";
 
 export function ServiceShowcase() {
   const [active, setActive] = useState(expertise[0].id);
+  const activeItem = expertise.find((item) => item.id === active);
+  const naturalFrame = Boolean(activeItem && "frames" in activeItem && activeItem.frames);
 
   return (
     <section className="bg-paper" aria-labelledby="expertise-heading">
@@ -59,24 +62,42 @@ export function ServiceShowcase() {
           </div>
 
           <div className="order-1 lg:order-2 lg:col-span-5 lg:col-start-8">
-            <div className="relative aspect-[4/5] overflow-hidden bg-sand lg:sticky lg:top-32">
-              {expertise.map((item) => (
-                <div
-                  key={item.id}
-                  className={`absolute inset-0 transition-opacity duration-700 ${
-                    item.id === active ? "opacity-100" : "pointer-events-none opacity-0"
-                  }`}
-                  aria-hidden={item.id !== active}
-                >
-                  <Media
-                    src={item.image}
-                    alt={item.alt}
-                    sizes="(min-width: 1024px) 38vw, 100vw"
-                    fit={item.fit ?? "cover"}
-                    objectPosition={item.objectPosition}
-                  />
-                </div>
-              ))}
+            <div
+              className={`relative lg:sticky lg:top-32 ${
+                naturalFrame ? "w-full" : "aspect-[4/5] overflow-hidden bg-sand"
+              }`}
+            >
+              {expertise.map((item) => {
+                const selected = item.id === active;
+                if ("frames" in item && item.frames) {
+                  return (
+                    <div key={item.id} className={selected ? "relative" : "hidden"} aria-hidden={!selected}>
+                      <FadeGallery
+                        frames={[...item.frames]}
+                        sizes="(min-width: 1024px) 38vw, 100vw"
+                        intrinsic
+                      />
+                    </div>
+                  );
+                }
+                return (
+                  <div
+                    key={item.id}
+                    className={`absolute inset-0 transition-opacity duration-700 ${
+                      selected ? "opacity-100" : "pointer-events-none opacity-0"
+                    }`}
+                    aria-hidden={!selected}
+                  >
+                    <Media
+                      src={item.image}
+                      alt={item.alt}
+                      sizes="(min-width: 1024px) 38vw, 100vw"
+                      fit={item.fit ?? "cover"}
+                      objectPosition={item.objectPosition}
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

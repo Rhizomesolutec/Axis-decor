@@ -66,6 +66,57 @@ const interiorDomeProject: Project = {
   frame: "landscape",
 };
 
+export const grpPhotos = [
+  {
+    src: "/images/project/GRP/GRP stair.webp",
+    alt: "Double GRP fibreglass stair handrail in a marble hall",
+    width: 1280,
+    height: 960,
+  },
+  {
+    src: "/images/project/GRP/GRP stair 2.webp",
+    alt: "Curved GRP fibreglass stair handrail beside a garden",
+    width: 1145,
+    height: 1280,
+  },
+  {
+    src: "/images/project/GRP/GRP stair 3.webp",
+    alt: "Sweeping GRP fibreglass stair handrail in a living hall",
+    width: 1280,
+    height: 960,
+  },
+  {
+    src: "/images/project/GRP/GRP stair 4.webp",
+    alt: "Close view of an ornate GRP fibreglass stair handrail",
+    width: 1280,
+    height: 960,
+  },
+  {
+    src: "/images/project/GRP/GRP fiberglass.webp",
+    alt: "GRP fibreglass balcony handrail above a marble hall",
+    width: 1280,
+    height: 1254,
+  },
+  {
+    src: "/images/project/GRP/GRP stair 5.webp",
+    alt: "GRP fibreglass stair handrail in a bright marble hall",
+    width: 1280,
+    height: 1254,
+  },
+  {
+    src: "/images/project/GRP/GRP stair 6.webp",
+    alt: "GRP fibreglass stair and landing handrail",
+    width: 1280,
+    height: 960,
+  },
+  {
+    src: "/images/project/GRP/GRP stair 7.webp",
+    alt: "Ornate GRP fibreglass stair handrail in a double-height hall",
+    width: 1145,
+    height: 1280,
+  },
+] as const;
+
 export const projects: Project[] = [
   {
     id: "falcon-dome",
@@ -263,6 +314,19 @@ export const projects: Project[] = [
     frame: "landscape",
   },
   {
+    id: "grp-handrails",
+    title: "GRP fibreglass handrails",
+    location: "",
+    scope: "Fibreglass handrails",
+    image: grpPhotos[0].src,
+    alt: grpPhotos[0].alt,
+    categories: ["GRP"],
+    objectPosition: "center",
+    fit: "contain",
+    frame: "landscape",
+    frames: [...grpPhotos],
+  },
+  {
     id: "grp-waterproofing",
     title: "GRP waterproofing",
     location: "",
@@ -392,10 +456,11 @@ export const expertise = [
     summary: "Lightweight architectural elements",
     detail:
       "Glass reinforced plastic for domes, AC ventilation components, and other lightweight architectural elements.",
-    image: images.domePlateAlt,
-    alt: "Brochure plate of GRP and GRC decorative domes, one with a gold finish",
+    image: grpPhotos[0].src,
+    alt: grpPhotos[0].alt,
     objectPosition: "center",
     fit: "contain" as const,
+    frames: grpPhotos,
   },
   {
     id: "grg",

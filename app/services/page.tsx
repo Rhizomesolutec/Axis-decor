@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { CTASection } from "@/components/CTASection";
+import { FadeGallery } from "@/components/FadeGallery";
 import { Media } from "@/components/Media";
 import { TextLink } from "@/components/ButtonLink";
-import { advantages, images } from "@/lib/content";
+import { advantages, grpPhotos, images } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -27,11 +28,12 @@ const chapters = [
     title: "GRP",
     summary: "Lightweight architectural elements",
     body: "Glass reinforced plastic for domes, A/C grills, waterproofing, and other lightweight elements. GRP waterproofing covers swimming pools, RCC underground water storage tanks, and open terraces. The GRP A/C grill at Al Habtoor City, Dubai, was carried out for Al Habtoor Group.",
-    image: images.domePlateAlt,
-    alt: "Brochure plate of GRP and GRC decorative domes, one with a gold finish",
+    image: grpPhotos[0].src,
+    alt: grpPhotos[0].alt,
     objectPosition: "center",
     fit: "contain" as const,
-    caption: "GRP and GRC decorative domes",
+    caption: "GRP fibreglass handrails",
+    frames: grpPhotos,
   },
   {
     index: "03",
@@ -98,17 +100,29 @@ export default function ServicesPage() {
                 </div>
                 <figure className={reversed ? "lg:col-span-6 lg:col-start-1 lg:row-start-1" : "lg:col-span-6 lg:col-start-7"}>
                   <div
-                    className={`relative overflow-hidden bg-sand ${
-                      chapter.fit === "contain" ? "aspect-[3/4]" : "aspect-[4/5] sm:aspect-[5/4]"
-                    }`}
+                    className={
+                      "frames" in chapter && chapter.frames
+                        ? "relative w-full"
+                        : `relative overflow-hidden bg-sand ${
+                            chapter.fit === "contain" ? "aspect-[3/4]" : "aspect-[4/5] sm:aspect-[5/4]"
+                          }`
+                    }
                   >
-                    <Media
-                      src={chapter.image}
-                      alt={chapter.alt}
-                      sizes="(min-width: 1024px) 46vw, 100vw"
-                      fit={chapter.fit}
-                      objectPosition={chapter.objectPosition}
-                    />
+                    {"frames" in chapter && chapter.frames ? (
+                      <FadeGallery
+                        frames={[...chapter.frames]}
+                        sizes="(min-width: 1024px) 46vw, 100vw"
+                        intrinsic
+                      />
+                    ) : (
+                      <Media
+                        src={chapter.image}
+                        alt={chapter.alt}
+                        sizes="(min-width: 1024px) 46vw, 100vw"
+                        fit={chapter.fit}
+                        objectPosition={chapter.objectPosition}
+                      />
+                    )}
                   </div>
                   <figcaption className="mt-3 text-sm text-stone">{chapter.caption}</figcaption>
                 </figure>

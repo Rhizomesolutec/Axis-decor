@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CTASection } from "@/components/CTASection";
 import { ExteriorPots } from "@/components/ExteriorPots";
+import { FadeGallery } from "@/components/FadeGallery";
 import { Media } from "@/components/Media";
 import { ProductGrid } from "@/components/ProductCard";
 import {
@@ -8,6 +9,7 @@ import {
   grcApplications,
   grgApplications,
   grpApplications,
+  grpPhotos,
   images,
 } from "@/lib/content";
 
@@ -115,10 +117,9 @@ export default function ProductsPage() {
       <section className="bg-paper" aria-labelledby="grp-heading">
         <div className="page-wrap grid items-center gap-10 py-16 md:py-24 lg:grid-cols-12">
           <figure className="lg:col-span-5">
-            <div className="relative aspect-[3/4] bg-sand">
-              <Media
-                src={images.domePlateAlt}
-                alt="Brochure plate of GRP and GRC decorative domes, one with a gold finish"
+            <div className="relative aspect-[3/4] overflow-hidden bg-sand">
+              <FadeGallery
+                frames={[...grpPhotos]}
                 sizes="(min-width: 1024px) 38vw, 100vw"
                 fit="contain"
               />
